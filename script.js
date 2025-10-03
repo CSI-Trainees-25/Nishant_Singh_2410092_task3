@@ -128,3 +128,26 @@ function win(){
         popup.style.display = flex ;
     }
 }
+class  ghosts {
+   constructor(className , stindex,speed){
+    this.className =className ;
+    this.stindex =stindex ;
+    this.speed=speed ;
+    this.currentindex= stindex ;
+    this.isscared =false ;
+    this.timer = NaN ;
+   }
+ }
+
+ ghost =[
+    new ghosts("bhut1",348,250),
+    new ghosts("bhut2",376,400),
+    new ghosts("bhut3",351,300),
+    new ghosts("bhut4",379,550)
+ ]
+ console.log(ghost);
+
+ ghost.forEach((e) => {
+    sq[e.currentindex].classList.add(e.className);
+    sq[e.currentindex].classList.add("ghost");
+});
