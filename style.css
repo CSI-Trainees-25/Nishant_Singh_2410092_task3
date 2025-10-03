@@ -3,10 +3,12 @@ body{
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    /* background-image: url(""); */
 }
 *{
-    padding: 0;
-    margin: 0;
+   padding: 0;
+   margin: 0;
+   /* background-color: antiquewhite; */
     font-family: monospace;
 }
 .grid{
@@ -14,7 +16,9 @@ body{
     width: 644px;
     height: 644px;
     display: flex;
-    flex-wrap: wrap;   
+    flex-wrap: wrap;  
+   box-shadow: 0 0 23px 23px rgb(10, 45, 147);
+
 }
 
 .grid div{
@@ -30,7 +34,7 @@ body{
     background-color: aqua;
     border-radius: 8px;
     height: 6vh;
-    width: 12vw;
+    width:10em;
     display: flex;
     align-items: center;
     h3{
@@ -64,4 +68,7 @@ body{
     padding: 0px;
     content: '😈';
     font-size: x-large;
+}
+.img{
+    height: 100px;
 }
