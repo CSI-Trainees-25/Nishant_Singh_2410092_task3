@@ -3,3 +3,18 @@
     margin: 0;
     font-family: monospace;
 }
+.grid{
+    border:1px solid black;
+    width: 644px;
+    height: 644px;
+    display: flex;
+    flex-wrap: wrap;   
+}
+
+.grid div{
+      box-sizing: border-box;
+    width: 23px;
+    height: 23px;
+    border:1px solid rgb(88, 196, 16);
+    
+}
