@@ -58,10 +58,53 @@ const layout= [
                else if(layout[i]===3){
                 sq[i].classList.add("powerpoint") ;
             }
-            else{
-                //blank vala hai ye
-            }
+           
          }
     }
     boardmaking() ;
     console.log(sq)
+
+
+    {
+    let packmanindex= 490 ;
+    sq[packmanindex].classList.add("packman") ;
+
+  function movepackman(e) {
+  console.log(e.key);
+    sq[packmanindex].classList.remove("packman") ;
+  switch(e.key){
+      case 'ArrowLeft' :
+        if(packmanindex % 28 !=0 && !sq[packmanindex-1].classList.contains("wall") && !sq[packmanindex-1].classList.contains("ghost")){
+            packmanindex-- ;
+        }
+         if(sq[packmanindex-1]===sq[363]){
+            packmanindex=391 ;
+        }
+        break ;
+
+      case 'ArrowRight' :
+        if(packmanindex % 28 <27 && !sq[packmanindex+1].classList.contains("wall") && !sq[packmanindex+1].classList.contains("ghost")){
+            packmanindex++ ;
+        }
+       if(sq[packmanindex+1]===sq[392]){
+            packmanindex=364 ;
+        }
+        break ;
+
+      case 'ArrowUp' :
+        if(  packmanindex - width >= 0  && !sq[packmanindex-28].classList.contains("wall") && !sq[packmanindex-28].classList.contains("ghost")){
+           packmanindex-=28 ;
+        }
+        break ;
+
+      case 'ArrowDown' :
+        if( packmanindex + width <layout.length && !sq[packmanindex+28].classList.contains("wall") && !sq[packmanindex+28].classList.contains("ghost")){
+                  packmanindex+=28 ;  
+        }
+
+        break ;
+  }
+  sq[packmanindex].classList.add("packman") ;
+}
+document.addEventListener("keyup", movepackman);
+}
