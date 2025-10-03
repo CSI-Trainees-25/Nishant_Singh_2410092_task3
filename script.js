@@ -1,16 +1,11 @@
 console.log("started");
 
-document.addEventListener("DOMContentLoaded",()=>{
-
-});
 let displayscore=document.getElementById("score") ;
-
 const width= 28 ;
 let score= 0 ;
 
 let grid=document.querySelector(".grid") ;
-//0 dot ke liye  and 1 wall ke liye 2 for ghost and 3 power ke liye and 4 kali vala
- 
+
 const layout= [
         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
         1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
@@ -42,11 +37,31 @@ const layout= [
         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
     ]
 
+ const sq=[]
+
+
     function boardmaking(){
          for(let i=0;i<layout.length ;i++){
             let square = document.createElement("div") ;
              grid.appendChild(square) ;
+            sq.push(square);
 
+            if(layout[i]=== 0){
+                sq[i].classList.add("dot") ;
+            }
+            else if(layout[i]===1){
+                sq[i].classList.add("wall") ;
+            }
+            else if(layout[i]===2){
+                sq[i].classList.add("ghost") ;
+            }
+               else if(layout[i]===3){
+                sq[i].classList.add("powerpoint") ;
+            }
+            else{
+                //blank vala hai ye
+            }
          }
     }
     boardmaking() ;
+    console.log(sq)

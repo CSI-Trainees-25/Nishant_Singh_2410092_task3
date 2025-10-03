@@ -1,10 +1,16 @@
+body{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
 *{
     padding: 0;
     margin: 0;
     font-family: monospace;
 }
 .grid{
-    border:1px solid black;
+    border:3px solid black;
     width: 644px;
     height: 644px;
     display: flex;
@@ -15,6 +21,43 @@
       box-sizing: border-box;
     width: 23px;
     height: 23px;
-    border:1px solid rgb(88, 196, 16);
+   
     
+}
+.sc{
+    margin-top: 15px;
+    border:5px solid blueviolet;
+    background-color: aqua;
+    border-radius: 8px;
+    height: 6vh;
+    width: 12vw;
+    display: flex;
+    align-items: center;
+    h3{
+        font-size: 1.5em;
+        font-weight: bolder;
+        padding-left: 12px;
+    }
+}
+.dot{
+    background-color: green;
+    border: 8px solid white;
+    border-radius: 50%;
+   
+
+}
+.wall{
+    background: blue;
+    border: 1px solid rgb(16, 12, 44);
+}
+.ghost::before {
+    content: '👻';
+    border: 1px solid salmon;
+    padding: 4px;
+    display: inline-block;
+}
+.powerpoint{
+    background-color:rgb(0, 255, 30);
+    border: 3px solid white;
+    border-radius: 50%;
 }
