@@ -34,7 +34,7 @@ body{
     background-color: aqua;
     border-radius: 8px;
     height: 6vh;
-    width:10em;
+    width:10.5em;
     display: flex;
     align-items: center;
     h3{
@@ -47,9 +47,13 @@ body{
     background-color: green;
     border: 8px solid white;
     border-radius: 50%;
-   
-
 }
+.blast{
+    background-color: red;
+    border: 3px solid white;
+    border-radius: 50%;
+}
+
 .wall{
     background: blue;
     border: 0.5px solid rgb(16, 12, 44);
@@ -69,9 +73,7 @@ body{
     content: '😈';
     font-size: x-large;
 }
-.img{
-    height: 100px;
-}
+
 .bhut1{
     
 background-color: aqua;
