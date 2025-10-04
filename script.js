@@ -1,9 +1,10 @@
-console.log("started pack-man");
+let start =document.querySelector(".start")
 
+
+console.log("started pack-man");
 
 let displayscore = document.querySelector(".level");
 const width = 28;
-
 
 let grid = document.querySelector(".grid");
 
@@ -69,8 +70,10 @@ boardmaking();
 console.log(sq)
 
 
+start.addEventListener("click",()=>{
 let packmanindex = 490;
 sq[packmanindex].classList.add("packman");
+
 
 function movepackman(e) {
     console.log(e.key);
@@ -135,10 +138,12 @@ function dot_eat() {
 
 }
 
+
 function win() {
-    if (!document.querySelector(".dot") && !document.querySelector(".powerpoint")) {
+    if (score==4) {
         alert("ham jeet gye")
-        popup.style.display = flex;
+    //    let popup = dot_eat.querySelector(".popup") ;
+    //     popup.style.display = "flex";
     }
 }
 
@@ -170,10 +175,9 @@ ghosts.forEach((e) => {
     moveghost(e);
 });
 
+
 function moveghost(ghost) {
     let directions = [-1, 1, 28, -28];
-
-
     ghost.timer = setInterval(function () {
         let dir = directions[Math.floor(Math.random() * directions.length)];
         if (!sq[ghost.currentindex + dir].classList.contains("wall")) {
@@ -202,3 +206,9 @@ function packmanbhut() {
 
     });
 }
+})
+
+let res = document.querySelector(".restart");
+res.addEventListener("click", () => {
+    window.location.reload();
+});
