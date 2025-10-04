@@ -111,6 +111,7 @@ function movepackman(e) {
 
     dot_eat();
     win()
+    packmanbhut()
 }
 document.addEventListener("keyup", movepackman);
 
@@ -163,7 +164,6 @@ console.log(ghosts);
 ghosts.forEach((e) => {
     sq[e.currentindex].classList.add(e.className);
     sq[e.currentindex].classList.add("ghost");
-    // moveghost();
 });
 
 ghosts.forEach((e) => {
@@ -171,24 +171,34 @@ ghosts.forEach((e) => {
 });
 
 function moveghost(ghost) {
-    console.log(ghost)
-    let direction = [-1, 1, 28, -28];
-
+    let directions = [-1, 1, 28, -28];
 
 
     ghost.timer = setInterval(function () {
-
-        if (!sq[currentindex + dir].classList.contains("ghost") && !sq[currentindex + dir].classList.contains("wall")) {
-
+        let dir = directions[Math.floor(Math.random() * directions.length)];
+        if (!sq[ghost.currentindex + dir].classList.contains("wall")) {
             sq[ghost.currentindex].classList.remove(ghost.className, "ghost");
-            let dir = direction[Math.floor(Math.random() * direction.length)];
             ghost.currentindex += dir;
-      }
-
+            sq[ghost.currentindex].classList.add(ghost.className, "ghost");
+        }
         else {
-
+            dir = directions[Math.floor(Math.random() * directions.length)];
         }
 
+        packmanbhut()
     }, ghost.speed);
+}
+let gameOver = false;
+function packmanbhut() {
+    ghosts.forEach(e => {
+        if (gameOver) return;
+        if (e.currentindex === packmanindex) {
+            gameOver = true;
+            alert("Game Over!");
 
+            ghosts.forEach(e => clearInterval(e.timer));
+            document.removeEventListener("keyup", movepackman);
+        }
+
+    });
 }
