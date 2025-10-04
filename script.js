@@ -197,16 +197,13 @@ function packmanbhut() {
         if (e.currentindex === packmanindex) {
             gameOver = true;
             alert("Game Over!");
-
+   
             ghosts.forEach(e => clearInterval(e.timer));
             document.removeEventListener("keyup", movepackman);
+
+              window.location.reload();
         }
 
     });
 }
 })
-
-let res = document.querySelector(".restart");
-res.addEventListener("click", () => {
-    window.location.reload();
-});
