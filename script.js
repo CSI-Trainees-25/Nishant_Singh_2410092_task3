@@ -138,12 +138,10 @@ function dot_eat() {
 
 }
 
-
-function win() {
-    if (score==4) {
+   function win(){
+       if (!document.querySelector(".dot") && !document.querySelector(".powerpoint")) {
         alert("ham jeet gye")
-    //    let popup = dot_eat.querySelector(".popup") ;
-    //     popup.style.display = "flex";
+        
     }
 }
 
