@@ -70,6 +70,7 @@ console.log(sq)
 
 
 start.addEventListener("click",()=>{
+
 let packmanindex = 490;
 sq[packmanindex].classList.add("packman");
 
@@ -115,7 +116,7 @@ function movepackman(e) {
     win()
     packmanbhut()
 }
-document.addEventListener("keyup", movepackman);
+document.addEventListener("keyup", movepackman);   
 
 let score = 0;
 function dot_eat() {
@@ -150,7 +151,6 @@ class ghost {
         this.stindex = stindex;
         this.speed = speed;
         this.currentindex = stindex;
-        this.isscared = false;
         this.timer = NaN;
     }
 }
@@ -159,7 +159,8 @@ ghosts = [
     new ghost("bhut1", 348, 250),
     new ghost("bhut2", 376, 400),
     new ghost("bhut3", 351, 300),
-    new ghost("bhut4", 379, 550)
+    new ghost("bhut4", 379, 550),
+    // new ghost("bhut5", 378, 650)
 ]
 console.log(ghosts);
 
@@ -176,17 +177,19 @@ ghosts.forEach((e) => {
 function moveghost(ghost) {
     let directions = [-1, 1, 28, -28];
     ghost.timer = setInterval(function () {
-        let dir = directions[Math.floor(Math.random() * directions.length)];
+        let dir = directions[Math.floor(Math.random() * 4)];
         if (!sq[ghost.currentindex + dir].classList.contains("wall")) {
+
             sq[ghost.currentindex].classList.remove(ghost.className, "ghost");
             ghost.currentindex += dir;
             sq[ghost.currentindex].classList.add(ghost.className, "ghost");
         }
         else {
-            dir = directions[Math.floor(Math.random() * directions.length)];
+            dir = directions[Math.floor(Math.random() * 4)];
         }
 
         packmanbhut()
+        
     }, ghost.speed);
 }
 let gameOver = false;

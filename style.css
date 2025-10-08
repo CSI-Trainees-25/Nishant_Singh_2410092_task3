@@ -37,7 +37,7 @@ body {
 }
 
 .blast {
-    background-color: red;
+    background-color: rgb(234, 76, 76);
     border: 3px solid white;
     border-radius: 50%;
 }
@@ -81,7 +81,13 @@ body {
     background-color: rgb(252, 0, 101);
     border: 2px solid rgb(249, 47, 67);
 
-}.sc {
+}
+.bhut5 {
+    background-color: rgb(56, 166, 188);
+    border: 2px solid rgb(51, 114, 186);
+
+}
+.sc {
     margin-top: 15px;
     border: 5px solid blueviolet;
     background-color: white;
