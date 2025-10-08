@@ -44,7 +44,7 @@ body {
 
 .wall {
     background: rgba(1, 1, 236, 0.733);
-    /* border: 1px solid rgb(16, 12, 44); */
+    border: 1px solid rgb(16, 12, 44);
 }
 
 .powerpoint {
